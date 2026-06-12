@@ -6,7 +6,7 @@
 /*   By: egarlasc <egarlasc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 11:06:48 by egarlasc          #+#    #+#             */
-/*   Updated: 2026/06/12 12:38:28 by egarlasc         ###   ########.fr       */
+/*   Updated: 2026/06/12 15:54:40 by egarlasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,12 @@ char	*ft_strjoin(char *s1, char *s2)
 	char	*res;
 
 	if (!s1 && !s2)
-		return (malloc(sizeof(char)));
+	{
+		res = malloc(sizeof(char));
+		if (res)
+			res[0] = '\0';
+		return (res);
+	}
 	if (!s1)
 		return (ft_strdup(s2));
 	else if (!s2)
