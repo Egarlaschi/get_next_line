@@ -98,8 +98,9 @@ int main(void)
 
 ### AI usage
 
-AI was used during this project for the following tasks:
+Claude (Anthropic) was used during this project for the following tasks:
 
 - **README generation:** the structure and content of this README was drafted with the assistance of Claude based on the source code and project requirements.
+- **Code review and debugging:** Claude was consulted to cross-check the logic of `read_and_stash`, particularly the loop termination condition, and to verify that memory is correctly managed across the three pipeline functions.
 
 AI was not used to write the core implementation. All `.c` and `.h` files were authored by `egarlasc`.
