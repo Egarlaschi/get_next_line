@@ -6,7 +6,7 @@
 /*   By: egarlasc <egarlasc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 11:06:58 by egarlasc          #+#    #+#             */
-/*   Updated: 2026/06/15 13:59:35 by egarlasc         ###   ########.fr       */
+/*   Updated: 2026/06/18 11:29:30 by egarlasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ char	*read_and_stash(int fd, char *stash)
 	bytes = 1;
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
+	{
+		free(stash);
 		return (NULL);
+	}
 	while (!stash || (!ft_strchr(stash, '\n') && bytes != 0))
 	{
 		bytes = read(fd, buffer, BUFFER_SIZE);
