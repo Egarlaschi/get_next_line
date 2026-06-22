@@ -6,7 +6,7 @@
 /*   By: egarlasc <egarlasc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 11:06:48 by egarlasc          #+#    #+#             */
-/*   Updated: 2026/06/15 13:59:50 by egarlasc         ###   ########.fr       */
+/*   Updated: 2026/06/15 14:17:03 by egarlasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ char	*ft_strchr(const char *s, int c)
 	while (*s)
 	{
 		if (*s == cc)
-			return ((char *) s);
+			return ((char *)s);
 		s++;
 	}
 	if (cc == '\0')
-		return ((char *) s);
+		return ((char *)s);
 	return (NULL);
 }
 

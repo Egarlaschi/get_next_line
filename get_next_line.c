@@ -6,7 +6,7 @@
 /*   By: egarlasc <egarlasc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 11:06:58 by egarlasc          #+#    #+#             */
-/*   Updated: 2026/06/18 11:28:56 by egarlasc         ###   ########.fr       */
+/*   Updated: 2026/06/18 12:15:01 by egarlasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,35 +43,28 @@ char	*read_and_stash(int fd, char *stash)
 char	*line_extractor(char *stash)
 {
 	int		i;
-	int		j;
 	char	*line;
 
 	i = 0;
-	j = 0;
 	if (!stash || stash[0] == '\0')
 		return (NULL);
 	while (stash[i] && stash[i] != '\n')
 		i++;
-	line = malloc(sizeof(char) * (i + 2));
+	if (stash[i] == '\n')
+		i++;
+	line = malloc(sizeof(char) * (i + 1));
 	if (!line)
 		return (NULL);
-	while (i >= j)
-	{
-		line[j] = stash[j];
-		j++;
-	}
-	line[j] = '\0';
+	ft_strlcpy(line, stash, i + 1);
 	return (line);
 }
 
 char	*stash_cleaner(char *stash)
 {
 	int		i;
-	int		j;
 	char	*stash_new;
 
 	i = 0;
-	j = 0;
 	while (stash[i] && stash[i] != '\n')
 		i++;
 	if (!stash[i])
@@ -86,9 +79,7 @@ char	*stash_cleaner(char *stash)
 		return (NULL);
 	}
 	i++;
-	while (stash[i])
-		stash_new[j++] = stash[i++];
-	stash_new[j] = '\0';
+	ft_strlcpy(stash_new, stash + i, ft_strlen(stash) - i + 1);
 	free(stash);
 	return (stash_new);
 }

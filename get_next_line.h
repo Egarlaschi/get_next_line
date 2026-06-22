@@ -6,7 +6,7 @@
 /*   By: egarlasc <egarlasc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:03:26 by egarlasc          #+#    #+#             */
-/*   Updated: 2026/06/15 12:28:58 by egarlasc         ###   ########.fr       */
+/*   Updated: 2026/06/15 14:15:41 by egarlasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define GET_NEXT_LINE_H
 # include <stdlib.h>
 # include <unistd.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 char	*ft_strchr(const char *s, int c);
 int		ft_strlen(const char *str);
